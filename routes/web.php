@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('plantilla');
-});
+// Personas, ocupaciones, estados civiles, obras sociales
+
+Route::get('/', 'PersonaController@index')->name('inicio');
+
+Route::resource('personas', 'PersonaController');
+
+
+Route::get('estadosciviles/listar', 'EstadoCivilController@listar')->name('estadosciviles.listar');
+
+Route::get('ocupaciones/listar', 'OcupacionController@listar')->name('ocupaciones.listar');
+
+Route::get('obrassociales/listar', 'ObraSocialController@listar')->name('obrassociales.listar');

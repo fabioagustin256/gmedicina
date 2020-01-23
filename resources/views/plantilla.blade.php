@@ -8,6 +8,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ url ('bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url ('jquery/css/jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ url ('css/fieldset.css') }}">
 
         <title>GMedicina</title>
     </head>
@@ -16,7 +17,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"> GMedicina </a>
+                        <a class="nav-link" href="{{ route('inicio') }}"> GMedicina </a>
                     </li>                       
                 </ul>
             </div>
