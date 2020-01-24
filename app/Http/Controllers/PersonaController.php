@@ -108,7 +108,7 @@ class PersonaController extends Controller
      */
     public function edit(Persona $persona)
     {
-        //
+        return view('personas.formulario', compact('persona'));
     }
 
     /**
@@ -120,7 +120,12 @@ class PersonaController extends Controller
      */
     public function update(Request $request, Persona $persona)
     {
-        //
+        campos_requeridos($request);        
+        $persona = Persona::findorfail($persona->id);
+        cargar_persona($persona, $request);
+        $mensaje = "Se actualizaron los datos de " . $persona->mostrar();
+        $correcto = true;    
+        return view('personas.formulario', compact('persona','mensaje', 'correcto'));
     }
 
     /**
