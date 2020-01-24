@@ -97,7 +97,7 @@ class PersonaController extends Controller
      */
     public function show(Persona $persona)
     {
-        //
+        return view('personas.historiaclinica', compact('persona'));
     }
 
     /**
