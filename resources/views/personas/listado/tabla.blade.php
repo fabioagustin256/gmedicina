@@ -19,6 +19,7 @@
                         <td class="text-center">
                             <a class="btn btn-warning btn-sm" href="{{ route('personas.edit', $persona) }}" role="button">Editar</a>
                             <a class="btn btn-primary btn-sm" href="{{ route('personas.show', $persona) }}" role="button">Historia Clínica</a>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#eliminar" data-nombre="{{ $persona->nombre }}" data-apellido="{{ $persona->apellido }}" data-personaid="{{ $persona->id }}">Eliminar</button>
                         </td>
                     @endisset
                 </tr>
