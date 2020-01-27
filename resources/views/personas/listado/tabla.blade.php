@@ -1,3 +1,7 @@
+@isset($correcto)
+	@include('formularios.mensajes', ['mensaje' => $mensaje, 'correcto'=> $correcto])
+@endisset
+
 <table class="table table-bordered table-sm">
     <thead class="thead-dark">
         <tr class="text-center">
