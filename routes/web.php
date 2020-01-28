@@ -11,6 +11,23 @@
 |
 */
 
+// Administracion 
+
+Route::get('administracion/{clase}/listar/{plural}', 'AdministracionController@listar')->name('administracion.clase.listar');
+
+Route::post('administracion/agregar/{clase}', 'AdministracionController@agregar')->name('administracion.clase.agregar');
+
+Route::get('administracion/cambiarestado/{clase}/{id}/', 'AdministracionController@cambiarestado')->name('administracion.clase.cambiarestado');
+
+Route::get('administracion/quitar/{clase}/{id}/', 'AdministracionController@quitar')->name('administracion.clase.quitar');
+
+Route::get('administracion/{clase}/buscar', 'AdministracionController@buscar')->name('administracion.clase.buscar');
+
+Route::post('administracion/{clase}/filtar', 'AdministracionController@filtrar')->name('administracion.clase.filtrar');
+
+Route::get('administracion/{clase}/resetearfiltrosclase', 'AdministracionController@resetearfiltrosclase')->name('administracion.clase.resetearfiltrosclase');
+
+
 // Personas, ocupaciones, estados civiles, obras sociales
 
 Route::get('/', 'PersonaController@index')->name('inicio');

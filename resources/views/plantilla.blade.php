@@ -18,7 +18,18 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('inicio') }}"> GMedicina </a>
-                    </li>                       
+                    </li>                   
+                    
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Administración
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'estadocivil', 'plural'=>'estados civiles')) }}"> Estado Civil </a></li>
+                            <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'obrasocial', 'plural'=>'obras sociales')) }}"> Obra Social </a></li>
+                            <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'ocupacion', 'plural'=>'ocupaciones')) }}"> Ocupación </a></li>        				            
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
