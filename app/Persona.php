@@ -25,13 +25,32 @@ class Persona extends Model
     {
         return number_format($this->dni, 0, ',', '.') . " - " . $this->nombre . " " . $this->apellido;
     }
-
         
     // Campos de historia clínica
 
     public function antecedentes_ginecobstetricos()
     {
         return $this->hasMany('App\AntecedenteGinecobstetrico');
+    }
+
+    public function antecedentes_quirurgicos()
+    {
+        return $this->hasMany('App\AntecedenteQuirurgico');
+    }
+
+    public function alergias()
+    {
+        return $this->hasMany('App\Alergia');
+    }
+
+    public function internaciones()
+    {
+        return $this->hasMany('App\Internacion');
+    }
+
+    public function habitos_toxicos()
+    {
+        return $this->hasMany('App\HabitoToxico');
     }
 
     public function medicamentos()

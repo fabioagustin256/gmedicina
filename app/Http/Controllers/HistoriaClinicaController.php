@@ -17,6 +17,18 @@ function obtener_objetos($clase, $persona)
         case 'antecedenteginecobstetrico':
             $objetos = $persona->antecedentes_ginecobstetricos;
             break;
+        case 'antecedentequirurgico':
+            $objetos = $persona->antecedentes_quirurgicos;
+            break;
+        case 'alergia':
+            $objetos = $persona->alergias;
+            break;
+        case 'internacion':
+            $objetos = $persona->internaciones;
+            break;
+        case 'habitotoxico':
+            $objetos = $persona->habitos_toxicos;
+            break;
         case 'medicamento':
             $objetos = $persona->medicamentos;
             break;

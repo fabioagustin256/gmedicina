@@ -25,9 +25,11 @@
         </div>
         
         @include('personas.detalles.historiaclinica.seccion1',
-        [ 'titulo' => 'Antecedentes Ginecobstetricos', 'nombrecampo'=>'Antecedentes ginecobstetricos',
+        [ 'titulo' => 'Antecedentes Ginecobstetricos',
         'personaid'=>$persona->id, 'clase'=>'antecedenteginecobstetrico',  
         'objetos'=>$persona->antecedentes_ginecobstetricos])
+
+        @include('personas.detalles.ant_pers_patologicos', ['persona'=>$persona])    
 
         @include('personas.detalles.historiaclinica.seccion1',
         [ 'titulo' => 'Medicamentos', 'nombrecampo'=>'Medicamentos',
@@ -43,8 +45,12 @@
 
     <script>
         $(document).ready(function(){
-
-            agregaritem("#nuevaantecedenteginecobstetrico", "#formnuevaantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico') )}}", "#tablaantecedenteginecobstetrico");4
+            agregaritem("#nuevaantecedenteginecobstetrico", "#formnuevaantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico') )}}", "#tablaantecedenteginecobstetrico");
+            
+            agregaritem("#nuevaantecedentequirurgico", "#formnuevaantecedentequirurgico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentequirurgico') )}}", "#tablaantecedentequirurgico");
+            agregaritem("#nuevaalergia", "#formnuevaalergia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'alergia') )}}", "#tablaalergia");
+            agregaritem("#nuevainternacion", "#formnuevainternacion", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'internacion') )}}", "#tablainternacion");
+            agregaritem("#nuevahabitotoxico", "#formnuevahabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico') )}}", "#tablahabitotoxico");
 
             agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento') )}}", "#tablamedicamento");
 
