@@ -46,3 +46,8 @@ Route::get('estadosciviles/listar', 'EstadoCivilController@listar')->name('estad
 Route::get('ocupaciones/listar', 'OcupacionController@listar')->name('ocupaciones.listar');
 
 Route::get('obrassociales/listar', 'ObraSocialController@listar')->name('obrassociales.listar');
+
+
+// Historia Clinica 
+
+Route::post('historiaclinica/{personaid}/agregar/{clase}', 'HistoriaClinicaController@agregar')->name('historiaclinica.clase.agregar');

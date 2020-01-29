@@ -21,7 +21,21 @@ class Persona extends Model
         return $this->belongsTo('App\ObraSocial');
     }
     
-    public function mostrar(){
+    public function mostrar()
+    {
         return number_format($this->dni, 0, ',', '.') . " - " . $this->nombre . " " . $this->apellido;
+    }
+
+        
+    // Campos de historia clínica
+
+    public function antecedentes_ginecobstetricos()
+    {
+        return $this->hasMany('App\AntecedenteGinecobstetrico');
+    }
+
+    public function medicamentos()
+    {
+        return $this->hasMany('App\Medicamento');
     }
 }

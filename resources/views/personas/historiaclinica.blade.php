@@ -22,9 +22,33 @@
                     @include('personas.detalles.datospersonales', ['persona' => $persona])
                 </div>
             </div>
-        </div>      
+        </div>
+        
+        @include('personas.detalles.historiaclinica.seccion1',
+        [ 'titulo' => 'Antecedentes Ginecobstetricos', 'nombrecampo'=>'Antecedentes ginecobstetricos',
+        'personaid'=>$persona->id, 'clase'=>'antecedenteginecobstetrico',  
+        'objetos'=>$persona->antecedentes_ginecobstetricos])
+
+        @include('personas.detalles.historiaclinica.seccion1',
+        [ 'titulo' => 'Medicamentos', 'nombrecampo'=>'Medicamentos',
+        'personaid'=>$persona->id, 'clase'=>'medicamento',  
+        'objetos'=>$persona->medicamentos])
 
     </div>
 
 @endsection
 
+@section('script')
+    <script src="{{ url('js/agregaritem.js') }}"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            agregaritem("#nuevaantecedenteginecobstetrico", "#formnuevaantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico') )}}", "#tablaantecedenteginecobstetrico");4
+
+            agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento') )}}", "#tablamedicamento");
+
+        });
+    </script>
+
+@endsection
