@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Medicamento extends Model
+class Ecografia extends Model
 {
     public function persona()
     {

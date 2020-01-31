@@ -36,7 +36,9 @@
         'personaid'=>$persona->id, 'clase'=>'medicamento',  
         'objetos'=>$persona->medicamentos])
 
-        @include('personas.detalles.historiaclinica.laboratorios', ['persona'=>$persona])    
+        @include('personas.detalles.historiaclinica.laboratorios', ['persona'=>$persona])
+        
+        @include('personas.detalles.historiaclinica.ecografias', ['persona'=>$persona])  
 
     </div>
 
@@ -60,6 +62,9 @@
 
             $("#fechalaboratorio").datepicker();
             agregaritem("#nuevolaboratorio", "#formnuevolaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio', 'tablalaboratorio') )}}", "#tablalaboratorio");
+
+            $("#fechaecografia").datepicker();
+            agregaritem("#nuevoecografia", "#formnuevoecografia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'ecografia', 'tablaecografia') )}}", "#tablaecografia");
 
         });
     </script>

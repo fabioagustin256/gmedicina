@@ -62,4 +62,9 @@ class Persona extends Model
     {
         return $this->hasMany('App\Laboratorio')->orderBy('fecha');
     }
+
+    public function ecografias()
+    {
+        return $this->hasMany('App\Ecografia')->orderBy('fecha');
+    }
 }

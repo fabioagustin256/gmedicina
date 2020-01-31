@@ -37,6 +37,9 @@ function obtener_objetos($clase, $persona)
         case 'laboratorio':
             $objetos = $persona->laboratorios;
             break;
+        case 'ecografia':
+            $objetos = $persona->ecografias;
+            break;
     }
     return $objetos;
 }
@@ -55,6 +58,21 @@ function cargar_campo($personaid, $clase, $request)
         if($request->descripcion)
         {
             $objeto->descripcion = $request->descripcion;
+        }
+
+        if($request->tipo)
+        {
+            $objeto->tipo = $request->tipo;
+        }
+
+        if($request->ecografista)
+        {
+            $objeto->ecografista = $request->ecografista;
+        }
+
+        if($request->resumen)
+        {
+            $objeto->resumen = $request->resumen;
         }
         
         $objeto->persona_id = $personaid;

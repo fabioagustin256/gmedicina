@@ -26,7 +26,7 @@
                         <form method="POST" id="formnuevolaboratorio">
                             @csrf
                             <div class="form-group">
-                                <label for="fecha" class="col-form-label">Fecha</label>
+                                <label for="fecha" class="col-form-label">Fecha:</label>
                                 <input type="text" class="form-control" id="fechalaboratorio" name="fecha" required>
                             </div>
                             <div class="form-group">
