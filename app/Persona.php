@@ -60,6 +60,6 @@ class Persona extends Model
 
     public function laboratorios()
     {
-        return $this->hasMany('App\Laboratorio');
+        return $this->hasMany('App\Laboratorio')->orderBy('fecha');
     }
 }

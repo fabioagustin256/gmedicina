@@ -71,8 +71,8 @@ function cargar_campo($personaid, $clase, $request)
 
 class HistoriaClinicaController extends Controller
 {
-    public function agregar($personaid, $clase, Request $request)
-    {             
+    public function agregar($personaid, $clase, $tabla, Request $request)
+    {   
         $resultado = cargar_campo($personaid, $clase, $request);
         $mensaje = $resultado['mensaje'];
         $correcto = $resultado['correcto'];       
@@ -80,23 +80,9 @@ class HistoriaClinicaController extends Controller
         $persona = Persona::findorfail($personaid);
 
         $objetos = obtener_objetos($clase, $persona);
-        $correcto = true;          
-        return view('personas.detalles.historiaclinica.tabla1', compact('personaid', 'clase', 'objetos', 'correcto', 'mensaje'));
+        $correcto = true;
+        $ruta = 'personas.detalles.historiaclinica.' . $tabla;      
+        return view($ruta, compact('personaid', 'clase', 'objetos', 'correcto', 'mensaje'));
     }
-
-    public function agregar_laboratorio($personaid, $clase, Request $request)
-    {             
-        $resultado = cargar_campo($personaid, $clase, $request);
-        $mensaje = $resultado['mensaje'];
-        $correcto = $resultado['correcto'];       
-
-        $persona = Persona::findorfail($personaid);
-
-        $objetos = obtener_objetos($clase, $persona);
-        $correcto = true;          
-        return view('personas.detalles.historiaclinica.tablalaboratorio', compact('personaid', 'clase', 'objetos', 'correcto', 'mensaje'));
-    }
-
-
 
 }

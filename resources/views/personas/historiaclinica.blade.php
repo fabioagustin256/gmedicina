@@ -48,17 +48,17 @@
 
     <script>
         $(document).ready(function(){
-            agregaritem("#nuevaantecedenteginecobstetrico", "#formnuevaantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico') )}}", "#tablaantecedenteginecobstetrico");
+            agregaritem("#nuevaantecedenteginecobstetrico", "#formnuevaantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico', 'tabla1') )}}", "#tablaantecedenteginecobstetrico");
             
-            agregaritem("#nuevaantecedentequirurgico", "#formnuevaantecedentequirurgico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentequirurgico') )}}", "#tablaantecedentequirurgico");
-            agregaritem("#nuevaalergia", "#formnuevaalergia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'alergia') )}}", "#tablaalergia");
-            agregaritem("#nuevainternacion", "#formnuevainternacion", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'internacion') )}}", "#tablainternacion");
-            agregaritem("#nuevahabitotoxico", "#formnuevahabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico') )}}", "#tablahabitotoxico");
+            agregaritem("#nuevaantecedentequirurgico", "#formnuevaantecedentequirurgico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentequirurgico', 'tabla1') )}}", "#tablaantecedentequirurgico");
+            agregaritem("#nuevaalergia", "#formnuevaalergia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'alergia', 'tabla1') )}}", "#tablaalergia");
+            agregaritem("#nuevainternacion", "#formnuevainternacion", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'internacion', 'tabla1') )}}", "#tablainternacion");
+            agregaritem("#nuevahabitotoxico", "#formnuevahabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico', 'tabla1') )}}", "#tablahabitotoxico");
 
-            agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento') )}}", "#tablamedicamento");
+            agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento', 'tabla1') )}}", "#tablamedicamento");
 
             $("#fechalaboratorio").datepicker();
-            agregaritem("#nuevolaboratorio", "#formnuevolaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio') )}}", "#tablalaboratorio");
+            agregaritem("#nuevolaboratorio", "#formnuevolaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio', 'tablalaboratorio') )}}", "#tablalaboratorio");
 
         });
     </script>
