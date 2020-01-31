@@ -57,4 +57,9 @@ class Persona extends Model
     {
         return $this->hasMany('App\Medicamento');
     }
+
+    public function laboratorios()
+    {
+        return $this->hasMany('App\Laboratorio');
+    }
 }

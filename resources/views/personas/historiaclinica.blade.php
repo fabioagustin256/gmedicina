@@ -29,12 +29,14 @@
         'personaid'=>$persona->id, 'clase'=>'antecedenteginecobstetrico',  
         'objetos'=>$persona->antecedentes_ginecobstetricos])
 
-        @include('personas.detalles.ant_pers_patologicos', ['persona'=>$persona])    
+        @include('personas.detalles.historiaclinica.ant_pers_patologicos', ['persona'=>$persona])    
 
         @include('personas.detalles.historiaclinica.seccion1',
-        [ 'titulo' => 'Medicamentos', 'nombrecampo'=>'Medicamentos',
+        ['titulo' => 'Medicamentos', 'nombrecampo'=>'Medicamentos',
         'personaid'=>$persona->id, 'clase'=>'medicamento',  
         'objetos'=>$persona->medicamentos])
+
+        @include('personas.detalles.historiaclinica.laboratorios', ['persona'=>$persona])    
 
     </div>
 
@@ -42,6 +44,7 @@
 
 @section('script')
     <script src="{{ url('js/agregaritem.js') }}"></script>
+    <script src="{{ url('js/calendarioes.js') }}"></script>
 
     <script>
         $(document).ready(function(){
@@ -53,6 +56,9 @@
             agregaritem("#nuevahabitotoxico", "#formnuevahabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico') )}}", "#tablahabitotoxico");
 
             agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento') )}}", "#tablamedicamento");
+
+            $("#fechalaboratorio").datepicker();
+            agregaritem("#nuevolaboratorio", "#formnuevolaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio') )}}", "#tablalaboratorio");
 
         });
     </script>
