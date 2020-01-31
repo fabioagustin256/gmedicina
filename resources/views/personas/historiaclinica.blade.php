@@ -40,6 +40,8 @@
         
         @include('personas.detalles.historiaclinica.ecografias', ['persona'=>$persona])  
 
+        @include('personas.detalles.historiaclinica.otros_metodos', ['persona'=>$persona])  
+
     </div>
 
 @endsection
@@ -65,6 +67,9 @@
 
             $("#fechaecografia").datepicker();
             agregaritem("#nuevoecografia", "#formnuevoecografia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'ecografia', 'tablaecografia') )}}", "#tablaecografia");
+
+            $("#fechaotrometodo").datepicker();
+            agregaritem("#nuevootrometodo", "#formnuevootrometodo", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'otrometodo', 'tablaotrometodo') )}}", "#tablaotrometodo");
 
         });
     </script>

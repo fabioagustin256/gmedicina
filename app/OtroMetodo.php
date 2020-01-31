@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HabitoToxico extends Model
+class OtroMetodo extends Model
 {
-    protected $table = "habitos_toxicos";
+    protected $table = "otros_metodos";
     
     public function persona()
     {

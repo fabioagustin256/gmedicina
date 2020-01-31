@@ -40,6 +40,9 @@ function obtener_objetos($clase, $persona)
         case 'ecografia':
             $objetos = $persona->ecografias;
             break;
+        case 'otrometodo':
+            $objetos = $persona->otros_metodos;
+            break;
     }
     return $objetos;
 }
