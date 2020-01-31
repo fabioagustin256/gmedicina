@@ -17,7 +17,9 @@
                     <td> {{ date('d/m/Y', strtotime($objeto->fecha)) }} </td>
                     <td> {{ $objeto->descripcion }} </td>
                     <td>                                       
-
+                        <button type="button" class="btn btn-danger btn-sm" onclick="quitaritem('{{ route('historiaclinica.clase.quitar',  array($personaid, $clase, $objeto->id, 'tablalaboratorio')) }}', '#tabla{{$clase}}')">
+                            Quitar
+                        </button>
                     </td>
                 </tr>
             @endforeach

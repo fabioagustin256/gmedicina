@@ -44,6 +44,7 @@
 
 @section('script')
     <script src="{{ url('js/agregaritem.js') }}"></script>
+    <script src="{{ url('js/quitaritem.js') }}"></script>
     <script src="{{ url('js/calendarioes.js') }}"></script>
 
     <script>

@@ -12,7 +12,7 @@
                 
                 <span id="tablalaboratorio">
                     @include('personas.detalles.historiaclinica.tablalaboratorio', 
-                        ['clase' => 'laboratorios', 'personaid'=> $persona->id, 'objetos' => $persona->laboratorios])
+                        ['clase' => 'laboratorio', 'personaid'=> $persona->id, 'objetos' => $persona->laboratorios])
                 </span>
                 
                 <p>

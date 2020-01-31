@@ -85,4 +85,21 @@ class HistoriaClinicaController extends Controller
         return view($ruta, compact('personaid', 'clase', 'objetos', 'correcto', 'mensaje'));
     }
 
+    public function quitar($personaid, $clase, $id, $tabla)
+    {
+        $modelo = nombre_modelo($clase);
+        $objeto = $modelo::findorfail($id);
+        try {
+            $objeto->delete();
+            $correcto = true;
+            $mensaje = "El registro se eliminó correctamente";
+        } catch (\Throwable $th) {
+            $correcto = false;
+            $mensaje = "No se puede eliminar el registro porque está asignado/a";
+        }
+        $persona = Persona::findorfail($personaid);
+        $objetos = obtener_objetos($clase, $persona);
+        $ruta = 'personas.detalles.historiaclinica.' . $tabla;  
+        return view($ruta, compact('personaid', 'clase', 'clasepaciente', 'objetos', 'correcto', 'mensaje'));
+    }
 }
