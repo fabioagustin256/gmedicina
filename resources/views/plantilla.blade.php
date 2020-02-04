@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{{ url ('bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url ('jquery/css/jquery-ui.css') }}">
         <link rel="stylesheet" href="{{ url ('css/fieldset.css') }}">
+        <link rel="stylesheet" href="{{ url ('css/submenu.css') }}">
 
         <title>GMedicina</title>
     </head>
@@ -24,10 +25,20 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Administración
                         </a>
+
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'estadocivil', 'plural'=>'estados civiles')) }}"> Estado Civil </a></li>
-                            <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'obrasocial', 'plural'=>'obras sociales')) }}"> Obra Social </a></li>
-                            <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'ocupacion', 'plural'=>'ocupaciones')) }}"> Ocupación </a></li>        				            
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#"> Campos de formularios </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'estadocivil', 'plural'=>'estados civiles')) }}"> Estado Civil </a></li>
+                                    <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'obrasocial', 'plural'=>'obras sociales')) }}"> Obra Social </a></li>
+                                    <li><a class="dropdown-item" href="{{ route('administracion.clase.listar', array('clase'=>'ocupacion', 'plural'=>'ocupaciones')) }}"> Ocupación </a></li>        				            
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#"> Eliminados </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ route('personas.listar_eliminados') }}"> Persona </a></li>            
+                                </ul>
+                            </li>  
                         </ul>
                     </li>
                 </ul>

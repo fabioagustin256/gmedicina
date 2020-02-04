@@ -52,4 +52,9 @@ Route::get('obrassociales/listar', 'ObraSocialController@listar')->name('obrasso
 
 Route::post('historiaclinica/{personaid}/{clase}/agregar/{tabla}', 'HistoriaClinicaController@agregar')->name('historiaclinica.clase.agregar');
 
-Route::get('historiaclinica/{pacienteid}/{clase}/quitar/{id}/{tabla}', 'HistoriaClinicaController@quitar')->name('historiaclinica.clase.quitar');
+Route::get('historiaclinica/{personaid}/{clase}/quitar/{id}/{tabla}', 'HistoriaClinicaController@quitar')->name('historiaclinica.clase.quitar');
+
+
+Route::get('administracion/personas/eliminados/listar', 'PersonaController@listar_eliminados')->name('personas.listar_eliminados');
+
+Route::get('administracion/personas/eliminados/{id}/recuperar', 'PersonaController@recuperar_eliminado')->name('personas.recuperar_eliminado');
