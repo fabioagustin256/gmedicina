@@ -40,6 +40,8 @@ Route::post('personas/filtarpersonas', 'PersonaController@filtrar')->name('filtr
 
 Route::get('resetearfiltrospersonas', 'PersonaController@resetearfiltrospersonas')->name('resetearfiltrospersonas');
 
+Route::post('personas/importar', 'PersonaController@importar')->name('personas.importar');
+
 
 Route::get('estadosciviles/listar', 'EstadoCivilController@listar')->name('estadosciviles.listar');
 

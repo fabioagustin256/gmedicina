@@ -87,28 +87,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="form-group">
-                    <label for="telefono_fijo">Teléfono Fijo</label>
-                    <input type="text" class="form-control" name="telefono_fijo" value="{{ isset($persona)?$persona->telefono_fijo:old('telefono_fijo') }}">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" name="telefono" value="{{ isset($persona)?$persona->telefono:old('telefono') }}">
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label for="telefono_celular">Teléfono Celular</label>
-                    <input type="text" class="form-control" name="telefono_celular" value="{{ isset($persona)?$persona->telefono_celular:old('telefono_celular') }}">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="form-group">
                     <label for="domicilio">Domicilio</label>
                     <input type="text" class="form-control" name="domicilio" value="{{ isset($persona)?$persona->domicilio:old('domicilio') }}">
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" value="{{ isset($persona)?$persona->email:old('email') }}">

@@ -3,8 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Persona;
+use App\Imports\PersonasImport;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Arr;
+
+use Maatwebsite\Excel\Facades\Excel;
+
 
 function cargar_personas()
 {
@@ -204,6 +210,64 @@ class PersonaController extends Controller
             $resultado[] = array('id'=>'', 'fila'=>'Sin resultados');   
         }
         return $resultado;
+    }
+
+    public function importar(Request $request)
+    {   
+        $file = $request->file('excel');
+        $file->move(base_path('archivos'), $file->getClientOriginalName());
+        $archivoexcel = base_path('archivos/').$file->getClientOriginalName();
+        $excel = Excel::toCollection(new PersonasImport, $archivoexcel);
+		unlink($archivoexcel);
+        $listado = collect();
+        foreach($excel as $hojas)
+        {
+            foreach ($hojas as $filas) 
+            {          
+                $nuevapersona = [];
+                $nuevapersona = Arr::add($nuevapersona, "dni", $filas["dni"]);
+                $nuevapersona = Arr::add($nuevapersona, "apellido", $filas["apellido"]);
+                $nuevapersona = Arr::add($nuevapersona, "nombre", $filas["nombre"]);
+                $fechanacimiento = Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($filas["fecha_nacimiento"]));
+                $fechanacimiento  = $fechanacimiento->format('d/m/Y');
+                $nuevapersona = Arr::add($nuevapersona, "fecha_nacimiento", $fechanacimiento);               
+                $nuevapersona = Arr::add($nuevapersona, "telefono", $filas["telefono"]);
+                $nuevapersona = Arr::add($nuevapersona, "email", $filas["email"]);
+                if($filas["dni"] && $filas["apellido"] && $filas["nombre"])
+                {
+                    $existe = Persona::where('dni', $filas["dni"])->get()->first();
+                    if(!$existe)
+                    {
+                        try {
+                            $persona = new Persona();
+                            $persona->dni = $filas["dni"];
+                            $persona->apellido = $filas["apellido"];
+                            $persona->nombre = $filas["nombre"];
+                            $persona->fecha_nacimiento = Carbon::createFromFormat('d/m/Y', $fechanacimiento)->format('Y-m-d');
+                            $persona->telefono = $filas["telefono"];
+                            ($filas["email"]) ? $persona->email = $filas["email"] : $persona->email = null;
+                            $persona->save();
+                            $nuevapersona = Arr::add($nuevapersona, "mensaje", "Correcto");
+                        } catch (Exception $e) {
+                            $nuevapersona = Arr::add($nuevapersona, "mensaje", $e);
+                        }
+                    }
+                    else 
+                    {
+                        $nuevapersona = Arr::add($nuevapersona, "mensaje", "ya existe en la base de datos");               
+
+                    }
+                }
+                else
+                {
+                    $nuevapersona = Arr::add($nuevapersona, "mensaje", "No se registro porque no tiene dni, apellido /o nombre");
+                }
+                $listado->push($nuevapersona);
+            }            
+        }
+        $listado = collect($listado->all());
+        $personas = cargar_personas();
+        return $listado->downloadExcel('resultado.xlsx', $writerType = null, $headings = true);
     }
 
     public function listar_eliminados()
