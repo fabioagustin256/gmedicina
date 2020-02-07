@@ -40,7 +40,9 @@
         
         @include('personas.detalles.historiaclinica.ecografias', ['persona'=>$persona])  
 
-        @include('personas.detalles.historiaclinica.otros_metodos', ['persona'=>$persona])  
+        @include('personas.detalles.historiaclinica.otros_metodos', ['persona'=>$persona])
+        
+        @include('personas.detalles.historiaclinica.consultas', ['persona'=>$persona]) 
 
     </div>
 
@@ -70,6 +72,9 @@
 
             $("#fechaotrometodo").datepicker();
             agregaritem("#nuevootrometodo", "#formnuevootrometodo", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'otrometodo', 'tablaotrometodo') )}}", "#tablaotrometodo");
+
+            $("#fechaconsulta").datepicker();
+            agregaritem("#nuevoconsulta", "#formnuevoconsulta", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'consulta', 'tablaconsulta') )}}", "#tablaconsulta");
 
         });
     </script>

@@ -72,4 +72,9 @@ class Persona extends Model
     {
         return $this->hasMany('App\OtroMetodo')->orderBy('fecha');
     }
+
+    public function consultas()
+    {
+        return $this->hasMany('App\Consulta')->orderBy('fecha');
+    }
 }

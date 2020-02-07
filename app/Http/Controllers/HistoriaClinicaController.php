@@ -43,6 +43,9 @@ function obtener_objetos($clase, $persona)
         case 'otrometodo':
             $objetos = $persona->otros_metodos;
             break;
+        case 'consulta':
+            $objetos = $persona->consultas;
+            break;
     }
     return $objetos;
 }
@@ -76,6 +79,16 @@ function cargar_campo($personaid, $clase, $request)
         if($request->resumen)
         {
             $objeto->resumen = $request->resumen;
+        }
+
+        if($request->motivo)
+        {
+            $objeto->motivo = $request->motivo;
+        }
+
+        if($request->tratamiento)
+        {
+            $objeto->tratamiento = $request->tratamiento;
         }
         
         $objeto->persona_id = $personaid;
