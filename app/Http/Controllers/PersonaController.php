@@ -49,8 +49,7 @@ function cargar_persona(Persona $persona, Request $request)
         $persona->estado_civil_id = $request->estado_civil;
         $persona->ocupacion_id = $request->ocupacion;
         $persona->obra_social_id = $request->obra_social;
-        $persona->telefono_fijo = $request->telefono_fijo;
-        $persona->telefono_celular = $request->telefono_celular;
+        $persona->telefono = $request->telefono;
         $persona->email = $request->email;
         $persona->domicilio = $request->domicilio;
         $persona->save();

@@ -60,3 +60,8 @@ Route::get('historiaclinica/{personaid}/{clase}/quitar/{id}/{tabla}', 'HistoriaC
 Route::get('administracion/personas/eliminados/listar', 'PersonaController@listar_eliminados')->name('personas.listar_eliminados');
 
 Route::get('administracion/personas/eliminados/{id}/recuperar', 'PersonaController@recuperar_eliminado')->name('personas.recuperar_eliminado');
+
+
+Route::post('galeriafotos/{persona}', 'GaleriaFotoController@cargar_foto')->name('galeriafotos.cargar_foto');
+
+Route::get('galeriafotos/{persona}/{id}', 'GaleriaFotoController@eliminar')->name('galeriafotos.eliminar');;

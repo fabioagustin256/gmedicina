@@ -77,4 +77,9 @@ class Persona extends Model
     {
         return $this->hasMany('App\Consulta')->orderBy('fecha');
     }
+
+    public function galeria_fotos()
+    {
+        return $this->hasMany('App\GaleriaFoto');
+    }
 }
