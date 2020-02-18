@@ -16,7 +16,7 @@ class GaleriaFotoController extends Controller
         ]);
 
         $ruta = 'public\archivos\fotos\\'.$persona->id.'\\';
-        $file = $request->file('foto');
+        $file = $request->file('foto');        
         $file->move(base_path($ruta), $file->getClientOriginalName());
         
         try

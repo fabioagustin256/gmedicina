@@ -8,12 +8,7 @@
     </div>
     <div id="galeriafotoContentId" class="collapse" role="tabpanel" aria-labelledby="galeriafotoHeaderId">
         <div class="card-body">              
-            <div id="tablagaleriafotopersona"> 
-                
-                <span id="tablagaleriafoto">
-                    @include('personas.detalles.historiaclinica.tablagaleriafotos', ['persona'=> $persona])
-                </span>
-
+            <div id="tablagaleriafotopersona">                 
                 <p>
                     <a class="btn btn-success" data-toggle="collapse" href="#nuevogaleriafoto" role="button" aria-expanded="false" aria-controls="collapseclase">
                         Agregar
@@ -29,11 +24,11 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <strong>Título:</strong>
-                                    <input type="text" name="titulo" class="form-control" required>
+                                    <input type="text" name="titulo" id="titulo" class="form-control" required>
                                 </div>
                                 <div class="col-md-5">
                                     <strong>Foto:</strong>
-                                    <input type="file" name="foto" class="form-control" required>
+                                    <input type="file" name="foto" id="foto" class="form-control" required>
                                 </div>
                                 <div class="col-md-2">
                                     <br/>
@@ -44,6 +39,9 @@
                     </div>
                 </div>
 
+                <span id="tablagaleriafoto">
+                    @include('personas.detalles.historiaclinica.tablagaleriafotos', ['persona'=> $persona])
+                </span>
             </div>
         </div>
     </div>

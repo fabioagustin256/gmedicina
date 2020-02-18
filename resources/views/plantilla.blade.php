@@ -7,12 +7,11 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ url ('bootstrap/css/bootstrap.css') }}">        
-        <link rel="stylesheet" href="{{ url ('css/fieldset.css') }}">        
-        <link rel="stylesheet" href="{{ url ('css/galeria.css') }}">
+        <link rel="stylesheet" href="{{ url ('css/fieldset.css') }}">
         <link rel="stylesheet" href="{{ url ('css/submenu.css') }}">
         <link rel="stylesheet" href="{{ url ('jquery/css/jquery-ui.css') }}">
 
-        @yield("css")
+        @yield('css')
         
         <title>GMedicina</title>
     </head>

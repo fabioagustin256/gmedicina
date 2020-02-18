@@ -1,10 +1,7 @@
 @extends('plantilla')
 
 @section('css')
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url ('jquery/css/jquery.fancybox.css') }}">
-    <link rel="stylesheet" href="{{ url ('css/galeria.css') }}">
-
+    <link rel="stylesheet" href="{{ url ('css/icono-eliminar.css') }}">
 @endsection
 
 @section('contenido')
@@ -58,7 +55,8 @@
 
 @section('script')
     <script src="{{ url('jquery/js/jquery.fancybox.js') }}" ></script>
-    <script src="{{ url('js/agregaritem.js') }}"></script>    
+    <script src="{{ url('js/agregaritem.js') }}"></script>
+    <script src="{{ url('js/agregarfoto.js') }}"></script>    
     <script src="{{ url('js/calendarioes.js') }}"></script>
     <script src="{{ url('js/quitaritem.js') }}"></script>
     
@@ -86,7 +84,7 @@
             $("#fechaconsulta").datepicker();
             agregaritem("#nuevoconsulta", "#formnuevoconsulta", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'consulta', 'tablaconsulta') )}}", "#tablaconsulta");
 
-            agregaritem("#nuevogaleriafoto", "#formnuevogaleriafoto", "{{ route('galeriafotos.cargar_foto', $persona) }}", "#tablagaleriafoto");
+            agregarfoto("#nuevogaleriafoto", "#formnuevogaleriafoto", "{{ route('galeriafotos.cargar_foto', $persona) }}", "#tablagaleriafoto");
             
         });
     </script>
