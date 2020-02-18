@@ -58,6 +58,11 @@ class Persona extends Model
         return $this->hasMany('App\Medicamento');
     }
 
+    public function antecedentes_familiares_patologicos()
+    {
+        return $this->hasMany('App\AntecedenteFamiliarPatologico');
+    }
+
     public function laboratorios()
     {
         return $this->hasMany('App\Laboratorio')->orderBy('fecha');

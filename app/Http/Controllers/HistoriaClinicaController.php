@@ -34,6 +34,9 @@ function obtener_objetos($clase, $persona)
         case 'medicamento':
             $objetos = $persona->medicamentos;
             break;
+        case 'antecedentefamiliarpatologico':
+            $objetos = $persona->antecedentes_familiares_patologicos;
+            break;
         case 'laboratorio':
             $objetos = $persona->laboratorios;
             break;

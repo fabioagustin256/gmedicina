@@ -36,9 +36,13 @@
         @include('personas.detalles.historiaclinica.ant_pers_patologicos', ['persona'=>$persona])    
 
         @include('personas.detalles.historiaclinica.seccion1',
-        ['titulo' => 'Medicamentos', 'nombrecampo'=>'Medicamentos',
-        'personaid'=>$persona->id, 'clase'=>'medicamento',  
+        ['titulo' => 'Medicamentos', 'personaid'=>$persona->id, 'clase'=>'medicamento',  
         'objetos'=>$persona->medicamentos])
+
+        @include('personas.detalles.historiaclinica.seccion1',
+        ['titulo' => 'Antecedentes Familiares Patológicos', 
+        'personaid'=>$persona->id, 'clase'=>'antecedentefamiliarpatologico',  
+        'objetos'=>$persona->antecedentes_familiares_patologicos])
 
         @include('personas.detalles.historiaclinica.laboratorios', ['persona'=>$persona])
         
@@ -71,6 +75,8 @@
             agregaritem("#nuevahabitotoxico", "#formnuevahabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico', 'tabla1') )}}", "#tablahabitotoxico");
 
             agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento', 'tabla1') )}}", "#tablamedicamento");
+
+            agregaritem("#nuevaantecedentefamiliarpatologico", "#formnuevaantecedentefamiliarpatologico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentefamiliarpatologico', 'tabla1') )}}", "#tablaantecedentefamiliarpatologico");
 
             $("#fechalaboratorio").datepicker();
             agregaritem("#nuevolaboratorio", "#formnuevolaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio', 'tablalaboratorio') )}}", "#tablalaboratorio");
