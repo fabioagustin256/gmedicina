@@ -54,6 +54,10 @@ Route::get('obrassociales/listar', 'ObraSocialController@listar')->name('obrasso
 
 Route::post('historiaclinica/{personaid}/{clase}/agregar/{tabla}', 'HistoriaClinicaController@agregar')->name('historiaclinica.clase.agregar');
 
+Route::get('historiaclinica/{personaid}/{clase}/editar/{id}/{formulario}', 'HistoriaClinicaController@editar')->name('historiaclinica.clase.editar');
+
+Route::post('historiaclinica/{personaid}/{clase}/actualizar/{formulario}', 'HistoriaClinicaController@actualizar')->name('historiaclinica.clase.actualizar');
+
 Route::get('historiaclinica/{personaid}/{clase}/quitar/{id}/{tabla}', 'HistoriaClinicaController@quitar')->name('historiaclinica.clase.quitar');
 
 
@@ -64,4 +68,4 @@ Route::get('administracion/personas/eliminados/{id}/recuperar', 'PersonaControll
 
 Route::post('galeriafotos/{persona}', 'GaleriaFotoController@cargar_foto')->name('galeriafotos.cargar_foto');
 
-Route::get('galeriafotos/{persona}/{id}', 'GaleriaFotoController@eliminar')->name('galeriafotos.eliminar');;
+Route::get('galeriafotos/{persona}/{id}', 'GaleriaFotoController@eliminar')->name('galeriafotos.eliminar');

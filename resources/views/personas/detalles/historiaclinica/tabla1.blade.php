@@ -11,10 +11,13 @@
     </thead>
     <tbody>
         @if(count($objetos))
-            @foreach ($objetos as $objeto)
+            @foreach ($objetos as $objeto)           
                 <tr class="text-center">
                     <td> {{ $objeto->descripcion }} </td>
-                    <td>                                       
+                    <td>      
+                        <button type="button" class="btn btn-warning btn-sm" onclick="editaritem('{{ route('historiaclinica.clase.editar',  array($personaid, $clase, $objeto->id, 'formulario1')) }}', '#formulario{{$clase}}edit')">
+                            Editar
+                        </button>                             
                         <button type="button" class="btn btn-danger btn-sm" onclick="quitaritem('{{ route('historiaclinica.clase.quitar',  array($personaid, $clase, $objeto->id, 'tabla1')) }}', '#tabla{{$clase}}')">
                             Quitar
                         </button>

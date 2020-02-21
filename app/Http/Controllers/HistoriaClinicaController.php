@@ -53,12 +53,10 @@ function obtener_objetos($clase, $persona)
     return $objetos;
 }
 
-function cargar_campo($personaid, $clase, $request)
+function cargar_campo($personaid, $objeto, $request)
 {    
     try {
-        $modelo = nombre_modelo($clase);
-        $objeto = new $modelo();
-
+  
         if($request->fecha)
         {
             $objeto->fecha = Carbon::createFromFormat('d/m/Y', $request->fecha)->format('Y-m-d');
@@ -110,7 +108,16 @@ class HistoriaClinicaController extends Controller
 {
     public function agregar($personaid, $clase, $tabla, Request $request)
     {   
-        $resultado = cargar_campo($personaid, $clase, $request);
+        $modelo = nombre_modelo($clase);
+        if ($request->id)
+        {
+            $objeto = $modelo::findorfail($request->id);
+        }
+        else
+        {            
+            $objeto = new $modelo();
+        }
+        $resultado = cargar_campo($personaid, $objeto, $request);
         $mensaje = $resultado['mensaje'];
         $correcto = $resultado['correcto'];       
 
@@ -121,6 +128,18 @@ class HistoriaClinicaController extends Controller
         $ruta = 'personas.detalles.historiaclinica.' . $tabla;      
         return view($ruta, compact('personaid', 'clase', 'objetos', 'correcto', 'mensaje'));
     }
+
+    public function editar($personaid, $clase, $id, $formulario)
+    {   
+        $modelo = nombre_modelo($clase);
+        $editar = $modelo::findorfail($id);
+
+        $persona = Persona::findorfail($personaid);
+
+        $ruta = 'personas.detalles.historiaclinica.'. $formulario;
+        return view($ruta, compact('persona', 'editar', 'clase'));
+    }
+    
 
     public function quitar($personaid, $clase, $id, $tabla)
     {

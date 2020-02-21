@@ -45,7 +45,7 @@
         'objetos'=>$persona->antecedentes_familiares_patologicos])
 
         @include('personas.detalles.historiaclinica.laboratorios', ['persona'=>$persona])
-        
+    
         @include('personas.detalles.historiaclinica.ecografias', ['persona'=>$persona])  
 
         @include('personas.detalles.historiaclinica.otros_metodos', ['persona'=>$persona])
@@ -62,6 +62,7 @@
     <script src="{{ url('js/agregaritem.js') }}"></script>
     <script src="{{ url('js/agregarfoto.js') }}"></script>    
     <script src="{{ url('js/calendarioes.js') }}"></script>
+    <script src="{{ url('js/editaritem.js') }}"></script>
     <script src="{{ url('js/quitaritem.js') }}"></script>
     
 

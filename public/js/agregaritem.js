@@ -9,7 +9,6 @@ function agregaritem(nuevoitem, formulario, ruta, tabla){
                 $(tabla).html(data);                
                 $(nuevoitem).collapse('toggle');
                 $(formulario)[0].reset();
-
             },
             error: function(data){
                 console.log(data);
