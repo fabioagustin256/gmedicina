@@ -139,7 +139,6 @@ class HistoriaClinicaController extends Controller
         $ruta = 'personas.detalles.historiaclinica.'. $formulario;
         return view($ruta, compact('persona', 'editar', 'clase'));
     }
-    
 
     public function quitar($personaid, $clase, $id, $tabla)
     {

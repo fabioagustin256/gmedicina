@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Tipo:</label>
-                                <input type="text" class="form-control" name="tipo" id="tipo">
+                                <input type="text" class="form-control" name="tipo">
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Ecografista:</label>

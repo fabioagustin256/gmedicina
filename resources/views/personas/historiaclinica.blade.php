@@ -2,6 +2,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ url ('css/icono-eliminar.css') }}">
+    <link rel="stylesheet" href="{{ url ('editor/css/editor.dataTables.css') }}">
 @endsection
 
 @section('contenido')
@@ -58,25 +59,38 @@
 @endsection
 
 @section('script')
-    <script src="{{ url('jquery/js/jquery.fancybox.js') }}" ></script>
     <script src="{{ url('js/agregaritem.js') }}"></script>
     <script src="{{ url('js/agregarfoto.js') }}"></script>    
     <script src="{{ url('js/calendarioes.js') }}"></script>
     <script src="{{ url('js/editaritem.js') }}"></script>
-    <script src="{{ url('js/quitaritem.js') }}"></script>
-    
+    <script src="{{ url('js/editarmodal.js') }}"></script>
+    <script src="{{ url('js/quitaritem.js') }}"></script>    
 
     <script>
         $(document).ready(function(){
             agregaritem("#nuevaantecedenteginecobstetrico", "#formnuevaantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico', 'tabla1') )}}", "#tablaantecedenteginecobstetrico");
-            
+            actualizaritem("#editarantecedenteginecobstetrico", "#formeditarantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico', 'tabla1') )}}", "#tablaantecedenteginecobstetrico");
+            editarmodalclase("#editarantecedenteginecobstetrico");
+
             agregaritem("#nuevaantecedentequirurgico", "#formnuevaantecedentequirurgico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentequirurgico', 'tabla1') )}}", "#tablaantecedentequirurgico");
+            actualizaritem("#editarantecedentequirurgico", "#formeditarantecedentequirurgico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentequirurgico', 'tabla1') )}}", "#tablaantecedentequirurgico");
+            editarmodalclase("#editarantecedentequirurgico");
+
             agregaritem("#nuevaalergia", "#formnuevaalergia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'alergia', 'tabla1') )}}", "#tablaalergia");
+            actualizaritem("#editaralergia", "#formeditaralergia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'alergia', 'tabla1') )}}", "#tablaalergia");
+            editarmodalclase("#editaralergia");
+
+
+
             agregaritem("#nuevainternacion", "#formnuevainternacion", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'internacion', 'tabla1') )}}", "#tablainternacion");
+            
+            
             agregaritem("#nuevahabitotoxico", "#formnuevahabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico', 'tabla1') )}}", "#tablahabitotoxico");
 
             agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento', 'tabla1') )}}", "#tablamedicamento");
-
+            actualizaritem("#editarmedicamento", "#formeditarmedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento', 'tabla1') )}}", "#tablamedicamento");
+            editarmodalclase("#editarmedicamento");
+                        
             agregaritem("#nuevaantecedentefamiliarpatologico", "#formnuevaantecedentefamiliarpatologico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentefamiliarpatologico', 'tabla1') )}}", "#tablaantecedentefamiliarpatologico");
 
             $("#fechalaboratorio").datepicker();

@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Descripción:</label>
-                                <input type="text" class="form-control" name="descripcion" id="descripcion">
+                                <input type="text" class="form-control" name="descripcion">
                             </div>
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </form>

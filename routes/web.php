@@ -56,8 +56,6 @@ Route::post('historiaclinica/{personaid}/{clase}/agregar/{tabla}', 'HistoriaClin
 
 Route::get('historiaclinica/{personaid}/{clase}/editar/{id}/{formulario}', 'HistoriaClinicaController@editar')->name('historiaclinica.clase.editar');
 
-Route::post('historiaclinica/{personaid}/{clase}/actualizar/{formulario}', 'HistoriaClinicaController@actualizar')->name('historiaclinica.clase.actualizar');
-
 Route::get('historiaclinica/{personaid}/{clase}/quitar/{id}/{tabla}', 'HistoriaClinicaController@quitar')->name('historiaclinica.clase.quitar');
 
 
