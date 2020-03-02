@@ -15,10 +15,13 @@
         @if(count($objetos))
             @foreach ($objetos as $objeto)
                 <tr class="text-center">
-                    <td> {{ date('d/m/Y', strtotime($objeto->fecha)) }} </td>
+                    <td> {{ $objeto->mostrar_fecha() }} </td>
                     <td> {{ $objeto->motivo }} </td>
                     <td> {{ $objeto->tratamiento }} </td>
-                    <td>                                       
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editar{{$clase}}" data-fec="{{ $objeto->mostrar_fecha() }}" data-mmotivo="{{ $objeto->motivo }}" data-ttratamiento="{{ $objeto->tratamiento }}" data-idclase="{{ $objeto->id }}">
+                            Editar
+                        </button>                                        
                         <button type="button" class="btn btn-danger btn-sm" onclick="quitaritem('{{ route('historiaclinica.clase.quitar',  array($personaid, $clase, $objeto->id, 'tablaconsulta')) }}', '#tabla{{$clase}}')">
                             Quitar
                         </button>

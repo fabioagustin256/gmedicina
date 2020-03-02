@@ -68,6 +68,8 @@
 
     <script>
         $(document).ready(function(){
+            $(".fecha").datepicker();
+
             agregaritem("#nuevaantecedenteginecobstetrico", "#formnuevaantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico', 'tabla1') )}}", "#tablaantecedenteginecobstetrico");
             actualizaritem("#editarantecedenteginecobstetrico", "#formeditarantecedenteginecobstetrico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedenteginecobstetrico', 'tabla1') )}}", "#tablaantecedenteginecobstetrico");
             editarmodalclase("#editarantecedenteginecobstetrico");
@@ -80,30 +82,37 @@
             actualizaritem("#editaralergia", "#formeditaralergia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'alergia', 'tabla1') )}}", "#tablaalergia");
             editarmodalclase("#editaralergia");
 
-
-
             agregaritem("#nuevainternacion", "#formnuevainternacion", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'internacion', 'tabla1') )}}", "#tablainternacion");
-            
-            
+            actualizaritem("#editarinternacion", "#formeditarinternacion", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'internacion', 'tabla1') )}}", "#tablainternacion");
+            editarmodalclase("#editarinternacion");
+           
             agregaritem("#nuevahabitotoxico", "#formnuevahabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico', 'tabla1') )}}", "#tablahabitotoxico");
+            actualizaritem("#editarhabitotoxico", "#formeditarhabitotoxico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'habitotoxico', 'tabla1') )}}", "#tablahabitotoxico");
+            editarmodalclase("#editarhabitotoxico");           
 
             agregaritem("#nuevamedicamento", "#formnuevamedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento', 'tabla1') )}}", "#tablamedicamento");
             actualizaritem("#editarmedicamento", "#formeditarmedicamento", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'medicamento', 'tabla1') )}}", "#tablamedicamento");
             editarmodalclase("#editarmedicamento");
                         
             agregaritem("#nuevaantecedentefamiliarpatologico", "#formnuevaantecedentefamiliarpatologico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentefamiliarpatologico', 'tabla1') )}}", "#tablaantecedentefamiliarpatologico");
+            actualizaritem("#editarantecedentefamiliarpatologico", "#formeditarantecedentefamiliarpatologico", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'antecedentefamiliarpatologico', 'tabla1') )}}", "#tablaantecedentefamiliarpatologico");
+            editarmodalclase("#editarantecedentefamiliarpatologico");
 
-            $("#fechalaboratorio").datepicker();
             agregaritem("#nuevolaboratorio", "#formnuevolaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio', 'tablalaboratorio') )}}", "#tablalaboratorio");
+            actualizaritem("#editarlaboratorio", "#formeditarlaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio', 'tablalaboratorio') )}}", "#tablalaboratorio");
+            editarmodalclase("#editarlaboratorio");
 
-            $("#fechaecografia").datepicker();
             agregaritem("#nuevoecografia", "#formnuevoecografia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'ecografia', 'tablaecografia') )}}", "#tablaecografia");
+            actualizaritem("#editarecografia", "#formeditarecografia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'ecografia', 'tablaecografia') )}}", "#tablaecografia");
+            editarmodalclase("#editarecografia");
 
-            $("#fechaotrometodo").datepicker();
             agregaritem("#nuevootrometodo", "#formnuevootrometodo", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'otrometodo', 'tablaotrometodo') )}}", "#tablaotrometodo");
+            actualizaritem("#editarotrometodo", "#formeditarotrometodo", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'otrometodo', 'tablaotrometodo') )}}", "#tablaotrometodo");
+            editarmodalclase("#editarotrometodo");
 
-            $("#fechaconsulta").datepicker();
             agregaritem("#nuevoconsulta", "#formnuevoconsulta", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'consulta', 'tablaconsulta') )}}", "#tablaconsulta");
+            actualizaritem("#editarconsulta", "#formeditarconsulta", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'consulta', 'tablaconsulta') )}}", "#tablaconsulta");
+            editarmodalclase("#editarconsulta");
 
             agregarfoto("#nuevogaleriafoto", "#formnuevogaleriafoto", "{{ route('galeriafotos.cargar_foto', $persona) }}", "#tablagaleriafoto");
             

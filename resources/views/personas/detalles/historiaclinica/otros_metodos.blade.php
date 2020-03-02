@@ -27,7 +27,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="fecha" class="col-form-label">Fecha:</label>
-                                <input type="text" class="form-control" id="fechaotrometodo" name="fecha" required>
+                                <input type="text" class="form-control fecha" id="fechaotrometodo" name="fecha" required>
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Tipo:</label>
@@ -46,3 +46,5 @@
         </div>
     </div>
 </div>
+
+@include('personas.detalles.historiaclinica.editar', ['clase' => 'otrometodo', 'fecha'=>true, 'tipo'=>true, 'descripcion'=>true])

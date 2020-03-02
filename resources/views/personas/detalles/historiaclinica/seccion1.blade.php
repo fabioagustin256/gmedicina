@@ -38,4 +38,4 @@
 </div>
 
 
-@include('personas.detalles.historiaclinica.editar1', ['clase' => $clase])
+@include('personas.detalles.historiaclinica.editar', ['clase' => $clase, 'descripcion'=>true])

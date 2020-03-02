@@ -27,19 +27,19 @@
                             @csrf
                             <div class="form-group">
                                 <label for="fecha" class="col-form-label">Fecha:</label>
-                                <input type="text" class="form-control" id="fechaecografia" name="fecha" required>
+                                <input type="text" class="form-control fecha" id="fechaecografia" name="fecha" required>
                             </div>
                             <div class="form-group">
-                                <label for="descripcion">Tipo:</label>
+                                <label for="tipo">Tipo:</label>
                                 <input type="text" class="form-control" name="tipo">
                             </div>
                             <div class="form-group">
-                                <label for="descripcion">Ecografista:</label>
+                                <label for="ecografista">Ecografista:</label>
                                 <input type="text" class="form-control" name="ecografista" id="ecografista">
                             </div>
                             <div class="form-group">    
                                 <label for="resumen">Resumen:</label>
-                                <textarea class="form-control" name="resumen" rows="3" required></textarea>   
+                                <textarea class="form-control" name="resumen" rows="3"></textarea>   
                             </div>
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </form>
@@ -50,3 +50,5 @@
         </div>
     </div>
 </div>
+
+@include('personas.detalles.historiaclinica.editar', ['clase' => 'ecografia', 'fecha'=>true, 'tipo'=>true, 'ecografista'=>true, 'resumen'=>true])
