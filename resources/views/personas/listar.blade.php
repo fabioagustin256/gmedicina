@@ -4,6 +4,10 @@
 
     <h3>Listado de personas</h3>
 
+    <br>
+                
+    @include('personas.listado.filtros')       
+    
     <br><br>
 
     <div class="row">
@@ -74,6 +78,7 @@
     <script>
         $(document).ready(function(){
             autocompletar("#buscar", "{{ route('buscarpersona') }}");
+            filtrar("{{ route('filtrarpersonas') }}", "#filtrospersonas", "#tablapersonas");
             filtrar("{{ route('filtrarpersonas') }}", "#buscarpersona", "#tablapersonas");  
 
             $("#eliminar").on('show.bs.modal', function (event) {

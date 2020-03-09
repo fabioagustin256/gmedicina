@@ -14,12 +14,12 @@ use Maatwebsite\Excel\Facades\Excel;
 
 function cargar_personas()
 {
-    return Persona::where('estado', true)->orderBy('apellido')->paginate(20);
+    return Persona::where('estado', true)->orderBy('apellido')->paginate(100);
 }
 
 function cargar_eliminados()
 {
-    return Persona::where('estado', false)->orderBy('apellido')->paginate(20);
+    return Persona::where('estado', false)->orderBy('apellido')->paginate(50);
 }
 
 function campos_requeridos($request){
@@ -169,9 +169,14 @@ class PersonaController extends Controller
             $personas = Persona::where('id', $request->buscarid);
         }
 
+        if($request->mes_nacimiento &&  $request->mes_nacimiento != "Sin información" )
+        {
+            $personas = Persona::whereMonth('fecha_nacimiento', $request->mes_nacimiento);
+        }
+
         if(isset($personas))
         {
-            $personas = $personas->where('estado', true)->orderBy('apellido')->paginate(20);
+            $personas = $personas->where('estado', true)->orderBy('apellido')->paginate(100);
             $mensaje = "Se aplicaron los filtros exitosamente";
         }
         else 
@@ -183,6 +188,7 @@ class PersonaController extends Controller
                 $mensaje = "Debe elegir al menos un filtro";
             }
         }
+
         $opciones = true;
         return view('personas.listado.tabla', compact('personas', 'opciones', 'correcto', 'mensaje'));
     }
