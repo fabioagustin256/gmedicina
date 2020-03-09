@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Descripción:</label>
-                                <input type="text" class="form-control" name="descripcion">
+                                <input type="text" class="form-control" name="descripcion" required>
                             </div>
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </form>
@@ -43,4 +43,4 @@
     </div>
 </div>
 
-@include('personas.detalles.historiaclinica.editar', ['clase' => 'laboratorio', 'fecha'=>true, 'descripcion'=>true])
+@include('personas.detalles.historiaclinica.editar', ['clase' => 'laboratorio', 'fecha'=>true, 'id_fecha'=>'fecha_laboratorio', 'descripcion'=>true])

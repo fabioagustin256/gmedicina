@@ -1,13 +1,13 @@
-function editarmodalclase(editarclase){
+function editarmodalclase(editarclase, idfecha){
     $(editarclase).on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
         var modal = $(this);
         var idclase = button.data('idclase');    
         modal.find(".modal-body #idclase").val(idclase);
 
-        if(button.data('fec')){ 
-            var fec = button.data('fec');         
-            modal.find(".modal-body #fec").val(fec);
+        if(button.data(idfecha)){ 
+            var fec = button.data(idfecha);        
+            modal.find(".modal-body #"+ idfecha).val(fec);
         }
 
         if(button.data('desc')){ 

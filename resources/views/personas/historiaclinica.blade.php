@@ -100,19 +100,19 @@
 
             agregaritem("#nuevolaboratorio", "#formnuevolaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio', 'tablalaboratorio') )}}", "#tablalaboratorio");
             actualizaritem("#editarlaboratorio", "#formeditarlaboratorio", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'laboratorio', 'tablalaboratorio') )}}", "#tablalaboratorio");
-            editarmodalclase("#editarlaboratorio");
+            editarmodalclase("#editarlaboratorio", "fecha_laboratorio");
 
             agregaritem("#nuevoecografia", "#formnuevoecografia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'ecografia', 'tablaecografia') )}}", "#tablaecografia");
             actualizaritem("#editarecografia", "#formeditarecografia", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'ecografia', 'tablaecografia') )}}", "#tablaecografia");
-            editarmodalclase("#editarecografia");
+            editarmodalclase("#editarecografia", "fecha_ecografia");
 
             agregaritem("#nuevootrometodo", "#formnuevootrometodo", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'otrometodo', 'tablaotrometodo') )}}", "#tablaotrometodo");
             actualizaritem("#editarotrometodo", "#formeditarotrometodo", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'otrometodo', 'tablaotrometodo') )}}", "#tablaotrometodo");
-            editarmodalclase("#editarotrometodo");
+            editarmodalclase("#editarotrometodo", "fecha_otros_metodos");
 
             agregaritem("#nuevoconsulta", "#formnuevoconsulta", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'consulta', 'tablaconsulta') )}}", "#tablaconsulta");
             actualizaritem("#editarconsulta", "#formeditarconsulta", "{{ route('historiaclinica.clase.agregar', array($persona->id, 'consulta', 'tablaconsulta') )}}", "#tablaconsulta");
-            editarmodalclase("#editarconsulta");
+            editarmodalclase("#editarconsulta", "fecha_consulta");
 
             agregarfoto("#nuevogaleriafoto", "#formnuevogaleriafoto", "{{ route('galeriafotos.cargar_foto', $persona) }}", "#tablagaleriafoto");
             

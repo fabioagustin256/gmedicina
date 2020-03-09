@@ -46,4 +46,4 @@
     </div>
 </div>
 
-@include('personas.detalles.historiaclinica.editar', ['clase' => 'consulta', 'fecha'=>true, 'motivo'=>true, 'tratamiento'=>true])
+@include('personas.detalles.historiaclinica.editar', ['clase' => 'consulta', 'fecha'=>true, 'id_fecha'=>'fecha_consultas', 'motivo'=>true, 'tratamiento'=>true])

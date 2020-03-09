@@ -8,7 +8,7 @@
                     @isset($fecha)
                         <div class="form-group">
                             <label for="fec" class="col-form-label">Fecha:</label>
-                            <input type="text" class="form-control fecha" name="fecha" id="fec" value="" required>
+                            <input type="text" class="form-control fecha" name="fecha" id="{{ $id_fecha }}" value="" required>
                         </div>
                     @endisset    
 

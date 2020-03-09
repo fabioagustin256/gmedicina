@@ -26,7 +26,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="descripcion">Descripción:</label>
-                                <input type="text" class="form-control" name="descripcion">
+                                <input type="text" class="form-control" name="descripcion" required>
                             </div>                
                             <button type="submit" class="btn btn-success">Guardar</button>
                         </form>

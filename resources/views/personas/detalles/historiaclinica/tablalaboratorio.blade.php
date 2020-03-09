@@ -17,7 +17,7 @@
                     <td> {{ $objeto->mostrar_fecha() }} </td>
                     <td> {{ $objeto->descripcion }} </td>
                     <td> 
-                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editar{{$clase}}" data-fec="{{ $objeto->mostrar_fecha() }}" data-desc="{{ $objeto->descripcion }}"  data-idclase="{{ $objeto->id }}">
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editar{{$clase}}" data-fecha_laboratorio="{{ $objeto->mostrar_fecha() }}" data-desc="{{ $objeto->descripcion }}"  data-idclase="{{ $objeto->id }}">
                             Editar
                         </button>                                       
                         <button type="button" class="btn btn-danger btn-sm" onclick="quitaritem('{{ route('historiaclinica.clase.quitar',  array($personaid, $clase, $objeto->id, 'tablalaboratorio')) }}', '#tabla{{$clase}}')">
