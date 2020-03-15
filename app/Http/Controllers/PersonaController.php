@@ -61,6 +61,11 @@ function cargar_persona(Persona $persona, Request $request)
 
 class PersonaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *

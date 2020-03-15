@@ -106,6 +106,11 @@ function cargar_campo($personaid, $objeto, $request)
 
 class HistoriaClinicaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function agregar($personaid, $clase, $tabla, Request $request)
     {   
         $modelo = nombre_modelo($clase);

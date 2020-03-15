@@ -42,6 +42,11 @@ function obtener_objetos($clase)
 
 class AdministracionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function listar($clase, $plural)
     {
         $objetos = obtener_objetos($clase);

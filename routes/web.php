@@ -11,6 +11,11 @@
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 // Administracion 
 
 Route::get('administracion/{clase}/listar/{plural}', 'AdministracionController@listar')->name('administracion.clase.listar');
@@ -67,3 +72,7 @@ Route::get('administracion/personas/eliminados/{id}/recuperar', 'PersonaControll
 Route::post('galeriafotos/{persona}', 'GaleriaFotoController@cargar_foto')->name('galeriafotos.cargar_foto');
 
 Route::get('galeriafotos/{persona}/{id}', 'GaleriaFotoController@eliminar')->name('galeriafotos.eliminar');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
