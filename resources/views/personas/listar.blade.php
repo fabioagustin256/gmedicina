@@ -25,12 +25,16 @@
             </form>
         </div>
         <div class="col-sm-1 text-sm-right">
-            <form action="{{ route('personas.importar') }}" method="POST" class="form-row float-right" role="form" enctype="multipart/form-data">
-                @csrf
-                <label class="btn btn-success">
-                    Importar <input type="file" hidden name="excel" onchange="this.form.submit()">
-                </label>
-            </form>  
+            @isset(Auth::user()->role)
+                @if( Auth::user()->role->name  == "admin" )
+                    <form action="{{ route('personas.importar') }}" method="POST" class="form-row float-right" role="form" enctype="multipart/form-data">
+                        @csrf
+                        <label class="btn btn-success">
+                            Importar <input type="file" hidden name="excel" onchange="this.form.submit()">
+                        </label>
+                    </form> 
+                @endif
+            @endisset
         </div>
         <div class="col-sm-1 text-sm-right">     
             <a class="btn btn-primary" href="{{ route('personas.create') }}" role="button">Agregar</a>
